@@ -18,21 +18,16 @@ export default function Movies() {
 
   const handleCloseBanner = () => {
     const trigger = bannerTrigger;
+    
+    // Smoothly close the advertisement overlay
     setBannerTrigger(null);
-    // Add a tiny delay to allow the exit animation to start smoothly before redirecting
+    
+    // Trigger download/watch synchronously in the click handler 
+    // to preserve the user-gesture context and bypass popup/download blockers
     if (trigger === "watch") {
-      setTimeout(() => {
-        window.location.href = siteConfig.WATCH_NOW_URL;
-      }, 300); // 300ms allows the exit animation to look good
+      window.location.href = siteConfig.WATCH_NOW_URL;
     } else if (trigger === "download") {
-      setTimeout(() => {
-        const a = document.createElement("a");
-        a.href = siteConfig.DOWNLOAD_URL;
-        a.download = "";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      }, 300);
+      window.location.href = siteConfig.DOWNLOAD_URL;
     }
   };
 
