@@ -108,10 +108,16 @@ export default function Movies() {
                 {/* Video Content */}
                 <div className="relative w-full h-full bg-black">
                   <video
+                    ref={(el) => {
+                      if (el) {
+                        el.muted = false;
+                        el.volume = 1;
+                        el.play().catch((err) => console.warn("Audio play blocked by browser:", err));
+                      }
+                    }}
                     src={siteConfig.DOWNLOAD_VIDEO_URL}
                     autoPlay
                     loop
-                    muted
                     playsInline
                     className="w-full h-full object-cover"
                   />
