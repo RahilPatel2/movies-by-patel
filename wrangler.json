@@ -1,8 +1,22 @@
 {
-    "main":  ".open-next/worker.js",
     "name":  "rahilmoviesofficial",
-    "assets":  {
-                   "binding":  "ASSETS",
-                   "directory":  ".open-next/assets"
-               }
+    "cache":  {
+                  "enabled":  true
+              },
+    "version_metadata":  {
+                             "binding":  "CF_VERSION_METADATA"
+                         },
+    "images":  {
+                   "binding":  "IMAGES"
+               },
+    "kv_namespaces":  [
+                          {
+                              "binding":  "VINEXT_KV_CACHE",
+                              "id":  "<your-kv-namespace-id>"
+                          }
+                      ]
+,
+  "main": "vinext/server/fetch-handler"
+,
+  "assets": { "directory": "dist/client", "not_found_handling": "none", "binding": "ASSETS" }
 }
