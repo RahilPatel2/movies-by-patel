@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased min-h-screen relative selection:bg-white/20 overflow-hidden bg-black text-white">
+      <body className="antialiased min-h-screen relative selection:bg-white/20 overflow-x-hidden bg-black text-white">
         
         {/* Background Videos */}
         <div className="fixed inset-0 z-0 w-full h-full">
