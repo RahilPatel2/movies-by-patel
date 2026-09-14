@@ -135,7 +135,7 @@ export default function Movies() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="w-full max-w-lg md:max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-4 md:gap-16 px-4 md:px-0 h-full mt-2 md:mt-0 mb-auto md:mb-0"
+        className="w-full max-w-lg md:max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-4 md:gap-16 px-4 md:px-0 min-h-full mt-2 md:mt-0 mb-auto md:mb-0"
       >
         
         {/* Dominant Poster Section - Scaled by VH on mobile */}
