@@ -1,1 +1,8 @@
-{   "name": "rahilmoviesofficial" }
+{
+    "main":  ".open-next/worker.js",
+    "name":  "rahilmoviesofficial",
+    "assets":  {
+                   "binding":  "ASSETS",
+                   "directory":  ".open-next/assets"
+               }
+}
