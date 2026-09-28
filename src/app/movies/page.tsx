@@ -199,7 +199,7 @@ export default function Movies() {
             </motion.button>
 
             <motion.button
-              onClick={() => setBannerTrigger("watch")}
+              onClick={() => alert("Not available for now")}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="relative overflow-hidden w-full py-4 md:py-5 rounded-2xl flex items-center justify-center gap-3 bg-transparent text-white font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 border border-white/10 hover:border-white/40 hover:bg-white/5 group"
