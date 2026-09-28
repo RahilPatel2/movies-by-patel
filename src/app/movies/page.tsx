@@ -11,6 +11,7 @@ import React from "react";
 export default function Movies() {
   const [bannerTrigger, setBannerTrigger] = useState<"download" | "watch" | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [watchPrompt, setWatchPrompt] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -199,7 +200,10 @@ export default function Movies() {
             </motion.button>
 
             <motion.button
-              onClick={() => alert("Not available for now")}
+              onClick={() => {
+                setWatchPrompt(true);
+                setTimeout(() => setWatchPrompt(false), 3000);
+              }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="relative overflow-hidden w-full py-4 md:py-5 rounded-2xl flex items-center justify-center gap-3 bg-transparent text-white font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 border border-white/10 hover:border-white/40 hover:bg-white/5 group"
@@ -208,7 +212,7 @@ export default function Movies() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent transition-opacity duration-500 pointer-events-none" />
               
               <PlayCircle className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-500 group-hover:scale-110" />
-              <span>Watch Now</span>
+              <span>{watchPrompt ? "Not available for now" : "Watch Now"}</span>
             </motion.button>
           </motion.div>
 
